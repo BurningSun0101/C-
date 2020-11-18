@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+class Queue
+{
+private:
+    int arr[10] = {};
+    int rear = -1;
+    int front = -1;
+
+public:
+    void Enqueue(int x)
+    {
+        if (rear == 9)
+        {
+            cout << "佇列是滿的" << endl;
+            return;
+        }
+        else
+            arr[++rear] = x;
+    }
+    int Dequeue()
+    {
+        if (front == rear)
+        {
+            cout << "佇列是空的" << endl;
+            return -1;
+        }
+        else
+        {
+            return arr[++front];
+        }
+    }
+    void PrintQueue()
+    {
+        for (int i = front + 1; i < rear+1 ; i++)
+            cout << arr[i] ;
+    }
+
+
+};
+
+int main(int argc, char* argv[])
+{
+    Queue queue;
+    int times, input;
+    cin >> times;
+    for (int i = 0; i < times; i++) {
+        cin >> input;
+        queue.Enqueue(input);
+    }
+    cin >> times;
+    for (int i = 0; i < times; i++) {
+        queue.Dequeue();
+    }
+    queue.PrintQueue();
+}
