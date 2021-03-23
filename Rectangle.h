@@ -1,15 +1,24 @@
 #ifndef Rectangle_h
 #define Rectangle_h
+
 class Rectangle
 {
 public:
-	double width, height;
-
 	Rectangle();
-	Rectangle(double newwidth, double newheight);
-	double getArea();
-	double getPerimeter();
+	Rectangle(double, double);
+	void setWidth(double);
+	double getWidth() const;
+	void setHeight(double);
+	double getHeight() const;
+	double getArea() const;
+	static int getNumOfRect() ;
 
+private:
+	double width, height;
+	 static int numOfRect;
 };
 
+
 #endif // !Rectangle_h
+
+

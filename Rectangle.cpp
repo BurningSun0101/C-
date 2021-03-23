@@ -1,22 +1,46 @@
 #include "Rectangle.h"
+#include <iostream>
+using namespace std;
 
-	Rectangle::Rectangle()
-	{
-		width = 1;
-		height = 1;
-	}
+int Rectangle::numOfRect = 0;
 
-	Rectangle::Rectangle(double newwidth, double newheight)
-	{
-		width = newwidth;
-		height = newheight;
-	}
+Rectangle::Rectangle()
+{
+	numOfRect++;
+}
 
-	double Rectangle::getArea()
-	{
-		return width * height;
-	}
-	double Rectangle::getPerimeter()
-	{
-		return (width + height) * 2;
-	}
+Rectangle::Rectangle(double w, double h)
+{
+	width = w;
+	height = h;
+}
+
+ void Rectangle::setWidth(double w)
+{
+	 width = w;
+}
+
+double Rectangle::getWidth() const
+{
+	return width;
+}
+
+void Rectangle::setHeight(double h)
+{
+	height = h;
+}
+
+double Rectangle::getHeight() const
+{
+	return height;
+}
+
+double Rectangle::getArea() const
+{
+	return (width*height);
+}
+
+int Rectangle::getNumOfRect() 
+{
+	return numOfRect;
+}
