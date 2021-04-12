@@ -1,0 +1,33 @@
+#include <iostream>
+#include<string>
+#include<sstream>
+using namespace std;
+
+void printStringArray(string word[], int size)
+{
+	for(int i=0;i<size;i++)
+	{
+		cout << word[i] << endl;
+		if (word[i] == "")
+			break;
+	}
+}
+
+int main()
+{
+	int i = 0;
+	string write;
+	string word[10];
+	getline(cin, write);
+	stringstream ss(write);
+	
+	while (!ss.eof())
+	{
+		ss >> word[i];
+		i++;
+	}
+		
+	
+	printStringArray(word, 10);
+	cout<<"Length:"<<write.length();
+}
