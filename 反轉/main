@@ -1,0 +1,61 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+template <typename T>
+
+void reverse(T list[], T newList[], int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		newList[i] = list[size - 1 - i];
+		if (i != size - 1)
+			cout << newList[i] << ",";
+		else
+			cout << newList[i];
+	}
+	cout << endl << endl;
+}
+
+int main()
+{
+	int list1[10], newlist1[10];
+	double list2[10], newlist2[10];
+
+	for (int i = 0; i < 10; i++)
+	{
+		cin >> list1[i];
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		cin >> list2[i];
+	}
+
+
+	cout << "From:";
+	for (int i = 0; i < 10; i++)
+	{
+		if (i != 10 - 1)
+			cout << list1[i] << ',';
+		else
+			cout << list1[i];
+	}
+	cout << endl;
+	cout << "To:";
+	reverse(list1, newlist1, 10);
+
+
+	cout << "From:";
+	for (int i = 0; i < 10; i++)
+	{
+		if (i != 10 - 1)
+			cout << list2[i] << ',';
+		else
+			cout << list2[i];
+	}
+	cout << endl;
+	cout << "To:";
+	reverse(list2, newlist2, 10);
+}
